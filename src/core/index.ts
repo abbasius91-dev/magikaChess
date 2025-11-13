@@ -1,2 +1,2 @@
 export { initPixiApp } from "./initPixiApp";
-export {app, sceneManager} from './app'
+export { app, sceneManager, eventEmitter } from "./app";

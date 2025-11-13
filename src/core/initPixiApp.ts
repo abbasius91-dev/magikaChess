@@ -1,22 +1,12 @@
 import { app } from "@/core";
 
- type CreateAppOptions = {
+type CreateAppOptions = {
   background?: string | number;
   resizeTo?: Window | HTMLElement;
   autoDensity?: boolean;
   antialias?: boolean;
   containerId?: string; // id DOM-элемента для монтирования canvas
 };
-
-/**
- * Создаёт и инициализирует Pixi Application, монтирует canvas в указанный контейнер.
- * Возвращает готовый `Application`.
- */
-
-
-
-
-
 
 export async function initPixiApp(options: CreateAppOptions = {}) {
   const {
@@ -27,7 +17,6 @@ export async function initPixiApp(options: CreateAppOptions = {}) {
     containerId = "pixi-container",
   } = options;
 
- 
   await app.init({
     background,
     resizeTo,
@@ -36,11 +25,10 @@ export async function initPixiApp(options: CreateAppOptions = {}) {
   });
 
   const container = document.getElementById(containerId);
-  
+
   if (!container) {
     throw new Error(`Container with id="${containerId}" not found`);
   }
 
   container.appendChild(app.canvas);
- 
 }
